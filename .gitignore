@@ -1,5 +1,5 @@
 */results/*.json
-
+build*
 !**/.gitkeep
 
 # Byte-compiled / optimized / DLL files
