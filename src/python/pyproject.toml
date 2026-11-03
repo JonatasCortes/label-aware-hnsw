@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "label-aware-hnsw-pipeline"
+version = "0.1.0"
+description = "Data pipeline and analysis tools for the LabelAwareHNSW project"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "datasets",
+    "sentence-transformers",
+    "torch",
+    "faiss-cpu",
+]
+
+[project.optional-dependencies]
+analysis = [
+    "pandas",
+    "matplotlib",
+]
+
+[tool.setuptools.packages.find]
+include = ["pipeline*", "analysis*"]
