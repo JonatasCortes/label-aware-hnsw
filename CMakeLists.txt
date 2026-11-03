@@ -13,7 +13,7 @@ endif()
 option(LAH_NATIVE_ARCH "Compile with -march=native" ON)
 
 add_library(label_aware_hnsw INTERFACE)
-target_include_directories(label_aware_hnsw INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/cpp/include)
+target_include_directories(label_aware_hnsw INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/src/cpp/include)
 target_compile_features(label_aware_hnsw INTERFACE cxx_std_20)
 target_compile_options(label_aware_hnsw INTERFACE -Wall -Wextra -Wpedantic)
 
@@ -31,7 +31,7 @@ if(LAH_NATIVE_ARCH)
 endif()
 
 enable_testing()
-file(GLOB LAH_TEST_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/cpp/tests/test_*.cpp)
+file(GLOB LAH_TEST_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/cpp/tests/test_*.cpp)
 foreach(test_source ${LAH_TEST_SOURCES})
   get_filename_component(test_name ${test_source} NAME_WE)
   add_executable(${test_name} ${test_source})
