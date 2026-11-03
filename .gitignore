@@ -1,5 +1,6 @@
 */results/*.json
 build*
+**/cache/dbpedia14
 !**/.gitkeep
 
 # Byte-compiled / optimized / DLL files
